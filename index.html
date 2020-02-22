@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo list</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="task-input">
+            <h1 id="movingTitle">What do you want to do next?</h1>
+            <input id="task" type="text" placeholder="Put your next task here" onkeyup="addTask()">
+        </div>
+        <div class="task-list-block">
+            <h1 id="list-of-task-title">Your list of tasks:</h1>
+            <ul id="task-list">
+<!--           Sould be the list of tasks here           -->
+            </ul>
+            <div class="animation-circle">
+                <div class="waiting"></div>
+                <span>Waiting for the next task</span>
+            </div>
+        </div>
+        <input class="all-tasks" type="button" value="These are all tasks a day">
+        <input class="add-new-task" type="button" value="Add new task">
+        <input class="clear-all-tasks-btn" type="button" value="Clear all tasks">
+        
+        
+    </div>
+    <div id="modal-for-clearing-all">
+        <div class="modal-for-clearing-all-block">
+             <p>All tasks will be deleted.</p>
+             <p>Are you sure?</p>
+             <input id="yes-btn" type="button" value="Yes">
+             <input id="no-btn" type="button" value="No">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

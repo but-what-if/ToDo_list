@@ -1,0 +1,239 @@
+body {
+    font-family: 'Indie Flower', cursive;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    margin: 20px auto 0;
+    padding: 30px;
+}
+
+.task-input>h1 {
+    margin-bottom: 50px;
+    color: #ccc;
+    text-align: center;
+    text-shadow: -1px 0 mediumvioletred, 0 1px mediumvioletred, 1px 0 mediumvioletred, 0 -1px mediumvioletred;
+/*    animation-name: moving;*/
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+@keyframes moving {
+    0% {
+        transform: rotate(2deg);
+    }
+    33.3333333% {
+        transform: rotate(-2deg);
+    }
+    66.6666666% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(2deg);
+    }
+}
+.task-input>input {
+    width: 100%;
+    border: 1px dashed mediumvioletred;
+    outline: none;
+    background-color: #FBFBFB;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Indie Flower', cursive;
+}
+.task-list-block {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px dashed mediumvioletred;
+    background-color: #f3dcea;
+}
+.task-list-block>h1 {
+    border-bottom: 1px dashed mediumvioletred;
+    color: #ccc;
+    text-align: center;
+    text-shadow: -1px 0 mediumvioletred, 0 1px mediumvioletred, 1px 0 mediumvioletred, 0 -1px mediumvioletred;
+}
+.list-item-block {
+    background-color: #FBFBFB;
+    width: 100%;
+    border-bottom: 1px dashed mediumvioletred;
+}
+.task-list-block>ul {
+    width: 100%;
+    list-style: decimal;
+}
+.list-items {
+    margin-left: 50px;
+    color: blue;
+    font-size: 30px;
+    width: 100%;
+}
+.animation-circle {
+    margin: 30px;
+    text-align: center;
+}
+.waiting {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px dashed mediumvioletred;
+    animation-name: rotateable;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotateable {
+    from {
+        transform: rotate(90deg);
+    }
+/*
+    33.3333333% {
+        transform: rotate(180deg);
+    }
+    66.6666666% {
+        transform: rotate(270deg);
+    }
+*/
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+.buttonsBlock {
+    border-left: 1px dashed mediumvioletred;
+    align-items: center;
+    width: 15%;
+    padding: 0 20px;
+}
+.buttonsBlock>span {
+    margin: 0 5px;
+}
+.cross, .done, .failed, .tryLater {
+    font-style: italic;
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.done {
+    color: green;
+}
+
+.tryLater {
+    color: orange;
+    display: none;
+}
+
+.all-tasks {
+    color: #fff;
+    background-color: mediumvioletred;
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+    border: 1px dashed transparent;
+    width: 100%;
+    padding: 10px;
+    margin: 20px auto 0;
+    outline: 0;
+    transition: background-color .5s;
+}
+.all-tasks:hover {
+    cursor: pointer;
+    border: 1px dashed mediumvioletred;
+    background-color: #FBFBFB;
+    color: mediumvioletred;
+    transition: background-color .5s;
+}
+
+.add-new-task {
+    display: none;
+    color: #fff;
+    background-color: limegreen;
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+    border: 1px dashed transparent;
+    width: 100%;
+    padding: 10px;
+    margin: 20px auto 0;
+    outline: 0;
+    transition: background-color .5s;
+}
+.add-new-task:hover {
+    cursor: pointer;
+    border: 1px dashed limegreen;
+    background-color: #FBFBFB;
+    color: limegreen;
+    transition: background-color .5s;
+}
+
+.clear-all-tasks-btn {
+    color: #fff;
+    background-color: red;
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+    border: 1px dashed transparent;
+    width: 100%;
+    padding: 10px;
+    margin: 20px auto 0;
+    outline: 0;
+    transition: background-color .5s;
+}
+.clear-all-tasks-btn:hover {
+    cursor: pointer;
+    border: 1px dashed red;
+    background-color: #FBFBFB;
+    color: red;
+    transition: background-color .5s;
+}
+
+
+/* Modal window for clearing all */
+
+#modal-for-clearing-all {
+    display: none;
+    background-color: rgba(250, 250, 250, 0.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#modal-for-clearing-all>.modal-for-clearing-all-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: mediumvioletred;
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    border: 1px dashed mediumvioletred;
+}
+#modal-for-clearing-all>.modal-for-clearing-all-block>input {
+    border: 0;
+    outline: 0;
+    font-size: 30px;
+    font-family: 'Indie Flower', cursive;
+    color: mediumvioletred;
+    background-color: #fff;
+    margin: 40px 40px 10px 40px;
+}
+#modal-for-clearing-all>.modal-for-clearing-all-block>input#yes-btn:hover {
+    cursor: pointer;
+    color: green;
+}
+#modal-for-clearing-all>.modal-for-clearing-all-block>input#no-btn:hover {
+    cursor: pointer;
+    color: red;
+}
